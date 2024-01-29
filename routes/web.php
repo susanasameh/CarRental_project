@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+//PageController Routes
+
+Route::fallback(PageController::class)->name('404');
+
+Route::get('index',[PageController::class,'index'])->name('index');
+
+Route::get('listingCar',[PageController::class,'listingCar'])->name('listingCar');
+
+Route::get('testimonial',[PageController::class,'testimonial'])->name('testimonial');
+
+Route::get('blog',[PageController::class,'blog'])->name('blog');
+
+Route::get('about',[PageController::class,'about'])->name('about');
+
+Route::get('contact',[PageController::class,'contact'])->name('contact');
+
+Route::get('single',[PageController::class,'single'])->name('single');
+
+
+
