@@ -48,25 +48,38 @@
         </div>
           <div class="row">
             <div class="col-lg-8 mb-5" >
-              <form action="#" method="post">
+              <form action="{{route('contactMail')}}" method="post">
+                @csrf
                 <div class="form-group row">
                   <div class="col-md-6 mb-4 mb-lg-0">
                     <input type="text" class="form-control" name="firstName" placeholder="First name">
+                    @error('firstName')
+                    {{ $message }}
+                @enderror
                   </div>
                   <div class="col-md-6">
                     <input type="text" class="form-control" name="lastName" placeholder="Last name">
+                    @error('lastName')
+                    {{ $message }}
+                @enderror
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <input type="text" class="form-control" name="email" placeholder="Email address">
+                    <input type="email" class="form-control" name="email" placeholder="Email address">
+                    @error('email')
+                    {{ $message }}
+                @enderror
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <textarea name="" id="" class="form-control" name="message" placeholder="Write your message." cols="30" rows="10"></textarea>
+                    <textarea id="" class="form-control" name="message" placeholder="Write your message." cols="30" rows="10"></textarea>
+                    @error('message')
+                    {{ $message }}
+                @enderror
                   </div>
                 </div>
                 <div class="form-group row">
