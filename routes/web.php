@@ -39,7 +39,7 @@ Route::get('about',[PageController::class,'about'])->name('about');
 
 Route::get('contact',[PageController::class,'contact'])->name('contact');
 
-Route::get('single',[PageController::class,'single'])->name('single');
+Route::get('single/{id}',[PageController::class,'single'])->name('single');
 
 
 
