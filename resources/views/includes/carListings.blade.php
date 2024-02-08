@@ -7,13 +7,11 @@
     </div>
 
 
-    <div class="row">
+    <div class="row">@foreach ($car as $cars)
       <div class="col-md-6 col-lg-4 mb-4">
 
-        @foreach ($car as $cars)
-
-
         <div class="listing d-block  align-items-stretch">
+
           <div class="listing-img h-100 mr-4">
             <a href="{{route('single', $cars->id)}}">
             <img src="{{asset('assets/images/'.$cars->image)}}" alt="Image" class="img-fluid">
@@ -39,15 +37,15 @@
             </div>
             <div>
               <p>{{$cars->content}}</p>
-              <p><a href="#" class="btn btn-primary btn-sm">Rent Now</a></p>
+              <p><a href="{{route('single', $cars->id)}}" class="btn btn-primary btn-sm">Rent Now</a></p>
             </div>
           </div>
 
         </div>
 
-        @endforeach
-      </div>
 
+      </div>
+@endforeach
 
 
     </div>

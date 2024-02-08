@@ -42,7 +42,7 @@ class CarController extends Controller
             'luggage'=>'required|string',
             'doors'=>'required|integer',
             'passengers'=>'required|integer',
-            'image'=>'required|mimes:png,jpg,jpeg|max:2048',
+            'image'=>'required|mimes:png,jpg,jpeg,webp|max:2048',
             'category_id'=>'required|exists:categories,id'
 
         ], $messages);
@@ -86,7 +86,7 @@ class CarController extends Controller
             'luggage'=>'required|string',
             'doors'=>'required|integer',
             'passengers'=>'required|integer',
-            'image'=>'sometimes|mimes:png,jpg,jpeg|max:2048',
+            'image'=>'sometimes|mimes:png,jpg,jpeg,webp|max:2048',
             'category_id'=>'required|exists:categories,id'
 
         ], $messages);

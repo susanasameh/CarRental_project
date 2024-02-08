@@ -64,7 +64,7 @@ Rent Car Admin | Edit Car
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <textarea id="content" name="content" required="required" class="form-control" value={{$car->content}}>Contents</textarea>
+                                    <textarea id="content" name="content" required="required" class="form-control">{{$car->content}}</textarea>
                                     @error('content')
                                     {{ $message }}
                                 @enderror

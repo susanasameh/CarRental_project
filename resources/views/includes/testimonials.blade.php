@@ -41,13 +41,13 @@
       </div>
     </div>
   </div> --}}
-
+@foreach ($testimonial as $testimonials)
   <div class="col-lg-4 mb-4">
 
     <div class="testimonial-2">
 
       <blockquote class="mb-4">
-      @foreach ($testimonial as $testimonials)  <p>"{{$testimonials->content}}"</p>
+        <p>"{{$testimonials->content}}"</p>
       </blockquote>
       <div class="d-flex v-card align-items-center">
         <img src="{{asset('assets/images/'.$testimonials->image)}}" alt="Image" class="img-fluid mr-3">
@@ -56,8 +56,8 @@
           <span>{{$testimonials->position}}</span>
         </div>
       </div>
-@endforeach
+
     </div>
 
   </div>
-
+@endforeach
