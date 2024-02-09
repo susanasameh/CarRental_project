@@ -9,6 +9,7 @@ use App\Http\Controllers\CarController;
 
 
 
+
 Route::prefix('admin')->middleware('verified')
 
   ->group(function(){
