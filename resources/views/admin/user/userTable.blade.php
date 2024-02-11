@@ -62,6 +62,8 @@
                           <th>Email</th>
                           <th>Active</th>
                           <th>Edit</th>
+                          <th>Show</th>
+
 
                         </tr>
                       </thead>
@@ -84,6 +86,8 @@
                             No
                         @endif</td>
                           <td><a href="editUser/{{ $data->id }}"><img src="{{asset('assets/admin/images/edit.png')}}" alt="Edit"></a></td>
+                          <td><a href="showUser/{{ $data->id }}"><img src="{{asset('assets/admin/images/edit.png')}}" alt="Edit"></a></td>
+
 
 
                         </tr>

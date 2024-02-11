@@ -20,5 +20,9 @@ class Category extends Model
         return $this->hasMany(Car::class);
       }
 
+      public function trip(){
+        return $this->hasMany(Trip::class);
+      }
+
 
 }

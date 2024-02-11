@@ -5,19 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class Trip extends Model
 {
     use HasFactory;
+
     protected $fillable=[
 
-        'title',
-        'price',
-        'active',
-        'content',
-        'luggage',
-        'doors',
-        'passengers',
-        'image',
+        'pickUp',
+        'dropOff',
         'category_id',
 
     ];
@@ -25,5 +20,4 @@ class Car extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
-
 }

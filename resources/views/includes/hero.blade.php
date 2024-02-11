@@ -15,10 +15,14 @@
             <div class="mb-3 mb-md-0 col-md-3">
               <select name="" id="" class="custom-select form-control">
                 <option value="">Select Type</option>
-                <option value="">Ferrari</option>
-                <option value="">Toyota</option>
+                @foreach ($category as $categories)
+                  
+                
+                <option value="{{ $categories->id }}" @selected(old('category_id') == $categories->id)>{{ $categories->categoryName }}</option>
+                {{-- <option value="">Toyota</option>
                 <option value="">Ford</option>
-                <option value="">Lamborghini</option>
+                <option value="">Lamborghini</option> --}}
+                @endforeach
               </select>
             </div>
             <div class="mb-3 mb-md-0 col-md-3">

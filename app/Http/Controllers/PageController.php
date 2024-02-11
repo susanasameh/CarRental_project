@@ -14,8 +14,9 @@ class PageController extends Controller
         $car=Car::where('active', 1)->orderBy('id','desc')->take(9)->get();
 
         $testimonial=Testimonial::where('published',true)->take(3)->latest()->get();
+        $category =Category::get();
 
-        return view('index',compact("car","testimonial"));
+        return view('index',compact("car","testimonial","category"));
 
     }
 

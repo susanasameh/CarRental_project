@@ -22,6 +22,8 @@ Route::prefix('admin')->middleware('verified')
 
     Route::post('storeUser',[UserController::class,'store'])->name('storeUser');
 
+    Route::get('showUser/{id}',[UserController::class,'show'])->name('showUser');
+
     Route::get('editUser/{id}',[UserController::class,'edit'])->name('editUser');
 
     Route::put('updateUser/{id}',[UserController::class,'update'])->name('updateUser');
