@@ -37,9 +37,9 @@ class PageController extends Controller
         return view('testimonial',compact('testimonial'));
     }
 
-    public function blog(Request $request){
+    public function blog(){
 
-        return view('blog',compact('page'));
+        return view('blog');
     }
 
     public function about(){

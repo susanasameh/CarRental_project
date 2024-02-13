@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('admin/includes/topNavigation', function ($view) {
             $unreadMessage = Contact::where('unreadMessage', 0)->count();
-            $unreadContacts = Contact::where('unreadMessage', 0)->get();
+            $unreadContacts = Contact::where('unreadMessage', 0)->take(3)->latest()->get();
             $view->with([
                 'unreadMessage' => $unreadMessage,
                 'unreadContacts' => $unreadContacts
