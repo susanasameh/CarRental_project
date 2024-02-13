@@ -31,6 +31,17 @@
                     <li><a href="{{route('messageTable')}}">Messages</a></li>
                 </ul>
             </li>
+            <li><a><i class="fa fa-desktop"></i> Team <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{route('addTeam')}}">Add Team</a></li>
+                    <li><a href="{{route('teamTable')}}">Team List</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-desktop"></i> Trips <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{route('tripTable')}}">Trips List</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 

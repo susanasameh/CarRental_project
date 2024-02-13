@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Car;
+use App\Models\Trip;
 
 class CategoryController extends Controller
 {
@@ -81,9 +82,12 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         $found = Car::where('category_id', $id)->count();
+        $foundTrips = Trip::where('category_id', $id)->count();
         if($found){
             // return redirect('teachers');
             return back()->with('error',"This teacher is linked to a class. It can't be deleted");
+         }elseif ($foundTrips) {
+                return back()->with('error', "This category is linked to trips and cannot be deleted.");
         }else{
         Category::where('id',$id)->delete();
         return redirect('admin/categoryTable');

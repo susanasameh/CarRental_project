@@ -49,4 +49,6 @@
 
 
     </div>
+    <!-- Pagination -->
+    {{-- {{$car->links()}} --}}
   {{-- </div> --}}

@@ -6,34 +6,40 @@ use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\Category;
 use App\Models\Testimonial;
+use App\Models\Trip;
 
 class PageController extends Controller
 {
     public function index(){
 
-        $car=Car::where('active', 1)->orderBy('id','desc')->take(9)->get();
+        $car=Car::where('active', 1)->orderBy('id','desc')->take(6)->get();
 
         $testimonial=Testimonial::where('published',true)->take(3)->latest()->get();
         $category =Category::get();
+        $trip=Trip::get();
 
-        return view('index',compact("car","testimonial","category"));
+        return view('index',compact("car","testimonial","category","trip"));
 
     }
 
-    public function listingCar(){
+    public function listingCar(Request $request){
 
-        $car=Car::where('active', 1)->orderBy('id', 'desc')->get();
+        // $car=Car::where('active', 1)->orderBy('id', 'desc')->get();
+        $page = $request->query('page', 1); // Get page number from query string
+        $car=Car::where('active', 1)->orderBy('id', 'desc')->paginate(6);
         $testimonial=Testimonial::take(3)->latest()->get();
-        return view('listingCar',compact('car','testimonial'));
+        return view('listingCar',compact('car','testimonial','page'));
     }
 
     public function testimonial(){
-        $testimonial=Testimonial::where('published',true)->take(6)->latest()->get();
+        // $testimonial=Testimonial::where('published',true)->take(6)->latest()->get();
+        $testimonial=Testimonial::where('published',true)->get();
         return view('testimonial',compact('testimonial'));
     }
 
-    public function blog(){
-        return view('blog');
+    public function blog(Request $request){
+
+        return view('blog',compact('page'));
     }
 
     public function about(){

@@ -127,7 +127,7 @@ class CarController extends Controller
             'image'=> 'Please be sure to select an image',
             'image.mimes'=> 'Incorrect image type',
             'image.max'=> 'Max file size exceeded',
-            'teacher_id' => 'required|exists:teachers,id',
+            'category_id' => 'required|exists:categories,id',
 
 
         ];

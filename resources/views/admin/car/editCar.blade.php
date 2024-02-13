@@ -149,7 +149,7 @@ Rent Car Admin | Edit Car
                             <div class="ln_solid"></div>
                             <div class="item form-group">
                                 <div class="col-md-6 col-sm-6 offset-md-3">
-                                    <button class="btn btn-primary" type="button">Cancel</button>
+                                    <button class="btn btn-primary" type="button" onclick="window.location.href='{{route('carTable')}}'">Cancel</button>
 												<button type="submit" class="btn btn-success">Update</button>
 											</div>
 										</div>

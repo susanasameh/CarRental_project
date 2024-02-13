@@ -6,13 +6,16 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CarController;
-
-
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TripController;
+use App\Http\Controllers\PageController;
 
 
 Route::prefix('admin')->middleware('verified')
 
   ->group(function(){
+
+    
 
     //user routes
 
@@ -89,6 +92,46 @@ Route::prefix('admin')->middleware('verified')
      Route::put('updateCar/{id}',[CarController::class,'update'])->name('updateCar');
 
      Route::get('deleteCar/{id}',[CarController::class,'destroy'])->name('deleteCar');
+
+
+     //Team routes
+
+     Route::get('teamTable',[TeamController::class,'index'])->name('teamTable');
+
+     Route::get('addTeam',[TeamController::class,'create'])->name('addTeam');
+
+     Route::post('storeTeam',[TeamController::class,'store'])->name('storeTeam');  
+     
+     Route::get('showTeam/{id}',[TeamController::class,'show'])->name('showTeam');
+
+     Route::get('editTeam/{id}',[TeamController::class,'edit'])->name('editTeam');
+
+     Route::put('updateTeam/{id}',[TeamController::class,'update'])->name('updateTeam');
+
+     Route::get('deleteTeam/{id}',[TeamController::class,'destroy'])->name('deleteTeam');
+
+
+     //Trip routes
+
+     Route::get('tripTable',[TripController::class,'index'])->name('tripTable');
+
+     Route::post('storeTrip',[TripController::class,'store'])->name('storeTrip');  
+     
+     Route::get('showTrip/{id}',[TripController::class,'show'])->name('showTrip');
+
+     Route::get('editTrip/{id}',[TripController::class,'edit'])->name('editTrip');
+
+     Route::put('updateTrip/{id}',[TripController::class,'update'])->name('updateTrip');
+
+     Route::get('deleteTrip/{id}',[TripController::class,'destroy'])->name('deleteTrip');
+
+
+
+
+
+
+
+
 
 
 

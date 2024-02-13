@@ -46,7 +46,39 @@
                   <span class="image"><img src="{{asset('assets/admin/images/img.jpg')}}" alt="Profile Image" /></span>
                   <span>
                     <span>{{ $contact->firstName }} {{ $contact->lastName }}</span>
-                    <span class="time">{{$contact->created_at}}</span>
+                    <?php
+
+                    //use Carbon::now to retrieve the current date and time in various contexts
+                    //change the time format
+                                    $minute = $contact->created_at->diffInMinutes(\Carbon\Carbon::now());
+                                    $hour = $contact->created_at->diffInHours(\Carbon\Carbon::now());
+                                    $day = $contact->created_at->diffInDays(\Carbon\Carbon::now());
+                                    // less than one hour
+                                    if($minute < 60){
+                                        if($minute == 1){
+                                            $minute = $minute . " Minute Ago";
+                                        }else{
+                                          $minute = $minute . " Minutes Ago";
+                                        }
+                                    }// less than one day
+                                    elseif($minute > 60 && $minute < 1440){    //24h*60m=1440min per one day
+                                        if($hour == 1){
+                                          $minute = $hour . " Hour Ago";
+                                        }else{
+                                          $minute = $hour . " Hours Ago";
+                                        }
+                                    }// in days
+                                    else{
+                                        if($day == 1){
+                                          $minute = $day . " Day Ago";
+                                        }else{
+                                          $minute = $day . " Days Ago";
+                                        }
+                                    }
+                                ?>
+                                
+                                <span class="time">{{ $minute }}</span>
+                    {{-- <span class="time">{{$contact->created_at}}</span> --}}
                   </span>
                   <span class="message">
                     {{$contact->message}}

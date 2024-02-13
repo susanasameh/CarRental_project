@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\View;
 use App\Models\Contact;
 
 
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -42,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
         //     //session
         //     $view->with("unreadContacts", $unreadContacts);
         // });
+       
 
         View::composer('admin/includes/topNavigation', function ($view) {
             $unreadMessage = Contact::where('unreadMessage', 0)->count();
@@ -55,5 +58,10 @@ class AppServiceProvider extends ServiceProvider
 
          // Fixing Bootstrap Pagination Style
          Paginator::useBootstrap();
+
+          if (!$this->app->environment('production')) {
+            $this->app->register('App\Providers\FakerServiceProvider');
+        }
+        
     }
 }

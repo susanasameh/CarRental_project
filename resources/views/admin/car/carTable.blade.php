@@ -83,8 +83,8 @@ Meetings
                     <td>{{$cars->luggage}}</td>
                     <td>{{$cars->doors}}</td>
                     <td>{{$cars->passengers}}</td>
-                    <td><img src="{{ asset('assets/images/'.$cars->image)}}" alt="Testimonial" style="width:150px;height:150px;"></td>
-                    <td>{{$cars->category_id}}</td>
+                    <td><img src="{{ asset('assets/images/'.$cars->image)}}" alt="Car" style="width:150px;height:150px;"></td>
+                    <td>{{$cars->category_id}}. {{$cars->category->categoryName}}</td>
 
                     <td><a href="editCar/{{$cars->id}}"><img src="{{asset('assets/admin/images/edit.png')}}" alt="Edit"></td>
                         <td><a href="deleteCar/{{$cars->id}}"><img src="{{asset('assets/admin/images/delete.png')}}" alt="Delete"></a></td>

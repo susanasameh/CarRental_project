@@ -18,11 +18,30 @@ Testimonials
 
  @include('includes.testimonials')
 
- @include('includes.testimonials')
+ {{-- @include('includes.testimonials')
  
- @include('includes.testimonials')
+ @include('includes.testimonials') --}}
 
 </div>
+
+{{-- <div class="row">
+  @foreach ($testimonial as $testimonials)
+  <div class="col-lg-4 mb-4">
+    <div class="testimonial-2">
+      <blockquote class="mb-4">
+        <p>"{{$testimonials->content}}"</p>
+      </blockquote>
+      <div class="d-flex v-card align-items-center">
+        <img src="{{asset('assets/images/'.$testimonials->image)}}" alt="Image" class="img-fluid mr-3">
+        <div class="author-name">
+          <span class="d-block">{{$testimonials->name}}</span>
+          <span>{{$testimonials->position}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endforeach
+  </div> --}}
 </div>
 </div>
 
