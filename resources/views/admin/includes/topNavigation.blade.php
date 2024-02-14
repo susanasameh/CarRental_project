@@ -42,7 +42,7 @@
                 {{-- @if (!$contacts->unreadMessage) --}}
 
               <li class="nav-item">
-                <a class="dropdown-item">
+                <a class="dropdown-item"  href="{{route('showMessage',$contact->id)}}">
                   <span class="image"><img src="{{asset('assets/admin/images/img.jpg')}}" alt="Profile Image" /></span>
                   <span>
                     <span>{{ $contact->firstName }} {{ $contact->lastName }}</span>
