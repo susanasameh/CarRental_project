@@ -22,6 +22,9 @@
 
 
       <header class="site-navbar site-navbar-target" role="banner">
+        @push('title')
+        Single Click
+          @endpush
 
         @include('includes.header')
 

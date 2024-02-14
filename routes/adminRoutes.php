@@ -43,7 +43,9 @@ Route::prefix('admin')->middleware('verified')
 
     Route::get('deleteMessage/{id}',[ContactController::class,'destroy'])->name('deleteMessage');
 
-    Route::post('contactMail',[ContactController::class,'contactMail'])->name('contactMail');
+    // Route::post('contactMail',[ContactController::class,'contactMail'])->name('contactMail');
+
+    // Route::post('storeMessage',[ContactController::class,'store'])->name('contactMail');
 
     Route::get('unreadMessage',[ContactController::class,'unreadMessage'])->name('unreadMessage');
 
@@ -115,7 +117,7 @@ Route::prefix('admin')->middleware('verified')
 
      Route::get('tripTable',[TripController::class,'index'])->name('tripTable');
 
-     Route::post('storeTrip',[TripController::class,'store'])->name('storeTrip');  
+    //  Route::post('storeTrip',[TripController::class,'store'])->name('storeTrip');  
      
      Route::get('showTrip/{id}',[TripController::class,'show'])->name('showTrip');
 

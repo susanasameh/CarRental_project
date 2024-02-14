@@ -1,8 +1,9 @@
-@extends('layouts.pages')
-
 @push('title')
 Listings
 @endpush
+@extends('layouts.pages')
+
+
 
 @section('content')
 

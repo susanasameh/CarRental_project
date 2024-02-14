@@ -1,4 +1,5 @@
-<title>CarRental &mdash; Free Website Template by Colorlib</title>
+{{-- <title>CarRental &mdash; @yield('header')</title> --}}
+<title>CarRental &mdash; @stack('title')</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

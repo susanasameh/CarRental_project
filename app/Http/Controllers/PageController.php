@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\Testimonial;
 use App\Models\Trip;
 
+
+
 class PageController extends Controller
 {
     public function index(){

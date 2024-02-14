@@ -2,6 +2,9 @@
 <html lang="en">
 
   <head>
+    @push('title')
+    Contact
+    @endpush
    @include('includes.head')
   </head>
 
@@ -29,9 +32,7 @@
 
       <div class="hero inner-page" style="background-image: url('assets/images/hero_1_a.jpg');">
 
-        @push('title')
-      Contact
-      @endpush
+       
          @include('includes.heroInnerPage')
       </div>
 

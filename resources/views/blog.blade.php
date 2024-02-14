@@ -1,8 +1,14 @@
-@extends('layouts.pages')
-
 @push('title')
 Blog
 @endpush
+@extends('layouts.pages')
+{{-- @section('header')
+Blog
+   @endsection --}}
+
+{{-- @push('title')
+Blog
+@endpush --}}
 
 @section('content')
 

@@ -31,7 +31,26 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $messages= [
+            //     'firstName'=>'please enter your first name',
+            //     'lastName'=>'please enter your last name',
+            //     'email'=>'please enter your email',
+            //     'message'=>'should be text',
+            // ];
+        
+            //     $data = $request->validate([
+            //         'firstName'=>'required|string|max:50',
+            //         'lastName'=>'required|string|max:50',
+            //         'email'=>'required|string',
+            //         'message'=>'required',
+        
+            //        ],$messages);
+        
+            //        Contact::create($data);
+            //     // return dd($request);
+            //    Mail::to('susana@example.com')->send(new ContactMail($data));
+        
+            //    return back()->with('success','Email sent successfully');
     }
 
     /**
